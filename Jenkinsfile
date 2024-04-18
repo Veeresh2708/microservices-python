@@ -43,16 +43,16 @@ pipeline{
                 script{
                    withDockerRegistry(credentialsId: 'docker-hub', toolName: 'docker'){
                    sh 'printenv'
-                   sh 'docker build --build-arg TMDB_V3_API_KEY=351823a305617537180a58b4308a0427 -t netflix:""$GIT_COMMIT"" .'
+                   sh 'docker build -t python-webapp:""$GIT_COMMIT"" .'
                    sh 'docker tag netflix:""$GIT_COMMIT"" veereshvanga/ott:$BUILD_NUMBER'
-                   sh 'docker push veereshvanga/ott:""$BUILD_NUMBER""'
+                   sh 'docker push veereshvanga/python-webapp:""$BUILD_NUMBER""'
                    }
                 }
             }
         }
         stage("TRIVY"){
             steps{
-                sh 'trivy image veereshvanga/ott:""$BUILD_NUMBER"" > trivyimage.txt' 
+                sh 'trivy image veereshvanga/python-webapp:""$BUILD_NUMBER"" > trivyimage.txt' 
             }
         }
         //stage('Deploy to container'){
