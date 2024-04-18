@@ -11,10 +11,6 @@ def get_Host_name_IP():
     except:
         print("Unable to get Hostname and IP")
 
-"""@app.route("/hostdetails")
-def hostdetails():
-    return get_Host_name_IP()
-"""
 @app.route("/")
 def hello_world():
     return "<p>Hello, World!</p>"
@@ -23,8 +19,8 @@ def hello_world():
 def health():
     return jsonify(status = "UP")
 
-@app.route("/veer")
-def veer():
+@app.route("/details")
+def details():
     host_name,host_ip  = get_Host_name_IP()
     return render_template('index.html',HOST_NAME=host_name, HOST_IP=host_ip )
 
