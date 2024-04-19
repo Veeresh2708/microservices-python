@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5426ef2a-b30d-4f82-94f9-2be4d9a1e527" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kubernetes/deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/kubernetes/deployment.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +70,17 @@
       <updated>1713447837268</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
