@@ -1,7 +1,7 @@
 pipeline{
     agent any
     environment {
-        SCANNER_HOME=tool 'sonarqube'
+        SCANNER_HOME=tool 'sonar-scanner'
     }
     stages {
         stage('clean workspace'){
@@ -37,11 +37,11 @@ pipeline{
         stage("Docker Build & Push"){
             steps{
                 script{
-                   withDockerRegistry(credentialsId: 'docker-hub', toolName: 'docker'){
+                   withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){
                    sh 'printenv'
-                   sh 'docker build -t python-webapp:""$GIT_COMMIT"" .'
-                   sh 'docker tag netflix:""$GIT_COMMIT"" veereshvanga/ott:$BUILD_NUMBER'
-                   sh 'docker push veereshvanga/python-webapp:""$BUILD_NUMBER""'
+                   sh 'docker build -t webapp_python:""$GIT_COMMIT"" .'
+                   sh 'docker tag webapp_python:""$GIT_COMMIT"" veereshvanga/ott:$BUILD_NUMBER'
+                   sh 'docker push veereshvanga/webapp_python:""$BUILD_NUMBER""'
                    }
                 }
             }
